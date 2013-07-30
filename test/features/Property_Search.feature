@@ -45,7 +45,7 @@ Scenario: Submit County Search for Properties
   And I click "Search" button
   Then I am on the page "Search Results"
   And the container "breadcrumbs" should display "Century21 Real Estate > State > Homes For Sale"
-  ^^^ This is not specific enough. Get suggestions. Possibly Use URL? ^^^
+#  ^^^ This is not specific enough. Get suggestions. Possibly Use URL? ^^^
 
 Scenario: Submit Neighborhood Search for Properties
   When I move focus to field "Search"

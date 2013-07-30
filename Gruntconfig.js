@@ -18,7 +18,9 @@ function getJshintOptions() {
 }
 
 function getCucumberOptions() {
-    return { files: './test/features' }
+    return { files: './test/features'
+           , options: { steps: "./test/features/step_definitions" }
+           }
 }
 
 module.exports = config

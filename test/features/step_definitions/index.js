@@ -1,11 +1,6 @@
 module.exports = MyStepDefinitions
 
 function MyStepDefinitions() {
-    this.Given(/^I am on the page "([^"]*)"$/, function(arg1, callback) {
-        // express the regexp above with the code you wish you had
-        callback.pending();
-    });
-
     this.When(/^I move focus to field "([^"]*)"$/, function(arg1, callback) {
         // express the regexp above with the code you wish you had
         callback.pending();
@@ -22,11 +17,6 @@ function MyStepDefinitions() {
     });
 
     this.Then(/^the container "([^"]*)" should display "([^"]*)"$/, function(arg1, arg2, callback) {
-        // express the regexp above with the code you wish you had
-        callback.pending();
-    });
-
-    this.Then(/^I am on the page "([^"]*)"$/, function(arg1, callback) {
         // express the regexp above with the code you wish you had
         callback.pending();
     });

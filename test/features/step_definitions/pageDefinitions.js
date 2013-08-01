@@ -4,17 +4,15 @@ var getNamedPage = require('../support/commands/getNamedPageCmd.js')
 function pageDefinitions() {
     this.World = World
 
-    this.Given(/^I am on the page "([^"]*)"$/, function(pagename, callback) {
-        var HomePage = getNamedPage(pagename)
-        // express the regexp above with the code you wish you had
-        callback.pending();
-    })
+    this.Given(/^I am on the page "([^"]*)"$/, gotoPage)
+    this.Then(/^I am on the page "([^"]*)"$/, gotoPage)
+}
 
-    this.Then(/^I am on the page "([^"]*)"$/, function(pagename, callback) {
-        var page = getNamedPage(pagename)
+function gotoPage(pagename, callback) {
+    var Page = getNamedPage(pagename)
 
-        this.browser.get(page.url, callback)
-    })
+    this.page = new Page(this)
+    this.browser.get(Page.url, callback)
 }
 
 module.exports = pageDefinitions

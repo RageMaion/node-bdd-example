@@ -2,8 +2,7 @@ module.exports = MyStepDefinitions
 
 function MyStepDefinitions() {
     this.When(/^I move focus to field "([^"]*)"$/, function(arg1, callback) {
-        // express the regexp above with the code you wish you had
-        callback.pending();
+        callback.pending()
     });
 
     this.When(/^I input "([^"]*)"$/, function(arg1, callback) {

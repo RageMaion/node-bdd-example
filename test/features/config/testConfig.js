@@ -8,3 +8,9 @@ exports['desired'] = { browserName: 'Chrome'
                      , tags: ['examples']
                      , name: 'This is an example node-bdd test'
                      }
+
+exports['verbose'] = false
+
+exports['verboseBrowser'] = false
+
+exports['verboseCucumber'] = false

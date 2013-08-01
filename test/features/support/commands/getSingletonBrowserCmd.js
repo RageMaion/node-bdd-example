@@ -4,7 +4,7 @@ var browserFactory = require('./browserFactory.js')
 
 function getSingletonBrowserCmd(cucumber) {
     if(!initPromise)
-        initPromise = browserFactory(config, cucumber, true)
+        initPromise = browserFactory(config, cucumber)
 
     return initPromise
 }

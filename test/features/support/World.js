@@ -1,15 +1,39 @@
 var getSingletonBrowser = require('../support/commands/getSingletonBrowserCmd.js')
   , Q = require('q')
+  , Cucumber = require('cucumber')
+  , world
 
 World.prototype.isReady = isReady
 
-module.exports = World
+module.exports = worldFactory
+
+function worldFactory(callback, cucumber) {
+    if(!world)
+        world = new World(callback, cucumber)
+    else
+        callback(world)
+    return world
+}
 
 function World(callback, cucumber) {
-    this.page = undefined
     this.browser = undefined
+    this.context = {}
 
+    attachToCucumber.call(this, cucumber)
     initBrowser.call(this, cucumber, callback)
+}
+
+function attachToCucumber(cucumber) {
+    var listener = Cucumber.Listener()
+      , self = this
+
+    listener.setHandlerForEvent('BeforeScenario', resetContext)
+    cucumber.attachListener(listener)
+
+    function resetContext(event, callback) {
+        self.context = {}
+        callback()
+    }
 }
 
 function initBrowser(cucumber, callback) {

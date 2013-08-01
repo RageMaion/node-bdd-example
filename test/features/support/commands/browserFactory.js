@@ -8,14 +8,14 @@ function browserFactory(config, cucumber, verbose) {
     var deferred = Q.defer()
       , browser = wd.remote(config.remote)
 
-    if(verbose)
+    if(config.verbose || config.verboseBrowser)
         verboseBrowserStatus(browser)
     browser.init(config.desired, onBrowserInit)
 
     function onBrowserInit(err) {
         if(err)
             throw err
-        if(verbose)
+        if(config.verbose || config.verboseCucumber)
             verboseCucumberEvents(cucumber)
         attachToCucumber(browser, cucumber)
         deferred.resolve(browser)

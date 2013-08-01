@@ -11,8 +11,14 @@ function pageDefinitions() {
 function gotoPage(pagename, callback) {
     var Page = getNamedPage(pagename)
 
-    this.page = new Page(this)
-    this.browser.get(Page.url, callback)
+    this.context.page = new Page(this)
+    this.browser.get(Page.url, onGet)
+
+    function onGet(err) {
+        if(err)
+            throw err
+        callback()
+    }
 }
 
 module.exports = pageDefinitions

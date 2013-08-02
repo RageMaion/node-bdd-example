@@ -1,7 +1,7 @@
 Feature: Agent Search
   Submits Agent Searches
   As a new visitor to the site
-  I need to be able to submit an agent search
+  I need to be able to submit agent searches
 
 Background:
   Given I am on the home page

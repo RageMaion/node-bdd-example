@@ -12,7 +12,7 @@ Scenario: Submit Search for an Agent
 
 Scenario: Search for an Agent Matches Multiple Categories
   When I search for "John Smith"
-  Then I see resuls in multiple categories
+  Then I see results in multiple categories
 
 Scenario: Submit City Search for Agents
   When I search for agents in "Phoenix, AZ"

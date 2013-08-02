@@ -15,6 +15,7 @@ Scenario: Submit Search for an Agent
 Scenario: Submit City Search for Agents
   When I move focus to field "searchText"
   And I input "City, State"
+
   And I click "Agents" button
   Then I am on the page "Search Results"
   And the container "breadcrumbs" should display "Century21 Real Estate > State > City > Agents"

@@ -10,6 +10,10 @@ Scenario: Submit Search for an Agent
   When I search for "Lisa Abbott"
   Then I should see the agent page
 
+Scenario: Search for an Agent Matches Multiple Categories
+  When I search for "John Smith"
+  Then I see resuls in multiple categories
+
 Scenario: Submit City Search for Agents
   When I search for agents in "Phoenix, AZ"
   Then I should see the agents results page

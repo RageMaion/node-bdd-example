@@ -1,6 +1,6 @@
 Feature: Agent Search
-  Submits an agent Search
-  A new user
+  Submits Agent Searches
+  As a new visitor to the site
   I need to be able to submit an agent search
 
 Background:

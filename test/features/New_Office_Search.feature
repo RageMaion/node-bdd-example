@@ -27,6 +27,6 @@ Scenario: Submit County Search for Offices
   Then I should see the office results page
 
 Scenario: Submit Neighborhood Search for Offices
-  When I search for offices in "Brentwood, Phoenix, AZ""
+  When I search for offices in "Brentwood, Phoenix, AZ"
   Then I should see the office results page
 

@@ -7,12 +7,8 @@ Feature: Agent Search
     Given I am on the home page
 
   Scenario: Submit Search for an Agent
-    When I search for "Lisa Abbott"
-    Then I should see the agent page
-
-  Scenario: Search for an Agent Matches Multiple Categories
-    When I search for "John Smith"
-    Then I see results in multiple categories
+    When I search for an agent by name
+    Then I should see the agent's profile
 
   Scenario: Submit City Search for Agents
     When I search for agents in "Phoenix, AZ"

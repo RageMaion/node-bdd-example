@@ -1,49 +1,32 @@
 Feature: Office Search
   Submits an Office Search
-  A new user
+  A new visitor to the site
   I need to be able to submit an office search
 
 Background:
-  Given I am on the page "Home"
+  Given I am on the home page
 
 Scenario: Submit Search for an Office
-  When I move focus to field "Search"
-  And I input "Office Name"
-  And I click "Offices" button
-  Then the container "breadcrumbs" should display "Century21 Real Estate > Office Name"
+  When I search for an office by name
+  Then I should see the office details page
 
 Scenario: Submit City Search for Offices
-  When I move focus to field "Search"
-  And I input "City, State"
-  And I click "Offices" button
-  Then I am on the page "Search Results"
-  And the container "breadcrumbs" should display "Century21 Real Estate > State > City > Offices"
+  When I search for offices in "Phoenix, AZ"
+  Then I should see the office results page
 
 Scenario: Submit State Search for Offices
-  When I move focus to field "Search"
-  And I input "State"
-  And I click "Offices" button
-  Then I am on the page "Search Results"
-  And the container "breadcrumbs" should display "Century21 Real Estate > State > Offices"
+  When I search for offices in "Arizona"
+  Then I should see the office results page
 
 Scenario: Submit Zip Code Search for Offices
-  When I move focus to field "Search"
-  And I input "Zip Code"
-  And I click "Offices" button
-  Then I am on the page "Search Results"
-  And the container "breadcrumbs" should display "Century21 Real Estate > State > City > Zip Code > Offices"
+  When I search for offices in "85254"
+  Then I should see the office results page
 
 Scenario: Submit County Search for Offices
-  When I move focus to field "Search"
-  And I input "County"
-  And I click "Offices" button
-  Then I am on the page "Search Results"
-  And the container "breadcrumbs" should display "Century21 Real Estate > State > Offices"
-#  ^^^ This is not specific enough. Get suggestions. Possibly Use URL? ^^^
+  When I search for offices in "Maricopa County, AZ"
+  Then I should see the office results page
 
 Scenario: Submit Neighborhood Search for Offices
-  When I move focus to field "Search"
-  And I input "Neighborhood"
-  And I click "Offices" button
-  Then I am on the page "Search Results"
-  And the container "breadcrumbs" should display "Century21 Real Estate > State > City > Neighborhood > Offices"
+  When I search for offices in "Brentwood, Phoenix, AZ""
+  Then I should see the office results page
+
